@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>我的16張照片網頁</title>
+    <style>
+        /* 1. 設定整體頁面樣式：背景色、居中、無邊距 */
+        body {
+            /* 顏色 #D9DADB */
+            background-color: #D9DADB; 
+            /* 讓內容水平居中 */
+            text-align: center; 
+            /* 移除預設的邊距 */
+            margin: 0; 
+            /* 讓字體更容易閱讀 */
+            font-family: Arial, sans-serif;
+            padding: 20px 0; /* 讓內容不要緊貼最頂端 */
+        }
+
+        /* 2. 定義容器：1920像素寬，水平居中 */
+        .grid-container {
+            /* 總寬度 1920 像素 */
+            width: 1920px; 
+            /* 讓區塊本身在 body 中水平居中 */
+            margin: 0 auto; 
+            /* 使用 Flexbox 進行彈性排版 */
+            display: flex;
+            /* 允許換行 */
+            flex-wrap: wrap; 
+        }
+
+        /* 3. 定義每個圖片區塊的樣式和尺寸 */
+        .photo-item {
+            /* 圖片寬度 400 像素 */
+            width: 400px; 
+            /* 保持 16:9 比例，高度將由圖片內容決定 */
+            aspect-ratio: 16 / 9; 
+            /* 相鄰區塊間的間距 (50px) */
+            margin: 0 50px 50px 0; 
+            /* 相鄰區塊間的間距 (50px) */
+            position: relative; 
+            /* 讓文字在圖片區塊內部居中 */
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-end; /* 將文字放在區塊底部 */
+            align-items: center;
+            /* 讓滑鼠懸停效果更平滑 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            /* 圖片的圓角 */
+            border-radius: 10px;
+            /* 預設邊框 (無邊框要求，但在開發時加個灰色邊框方便觀察) */
+            border: 0px solid transparent; 
+            /* 確保圖片不超出邊界 */
+            overflow: hidden; 
+        }
+
+        /* 4. 根據你的架構圖調整邊距 */
+        /* 第一行和最左邊的 85px 邊距 */
+        .photo-item:nth-child(-n+4) { 
+            margin-top: 85px;
+        }
+
+        /* 讓最左邊一欄有 85px 的左邊距 */
+        .photo-item:nth-child(4n+1) { 
+            margin-left: 85px;
+        }
+        
+        /* 移除每行的最右邊一欄的右邊距 50px */
+        .photo-item:nth-child(4n) { 
+            margin-right: 0;
+        }
+
+        /* 5. 圖片的樣式 */
+        .photo-item img {
+            /* 讓圖片填滿整個區塊 */
+            width: 100%; 
+            height: 100%;
+            /* 確保圖片不變形地填滿空間 */
+            object-fit: cover; 
+            /* 圖片的圓角繼承自父容器 */
+            border-radius: 10px; 
+            /* 讓圖片和文字疊在一起 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1; /* 圖片在文字下方 */
+        }
+        
+        /* 6. 文字樣式 (24pt) */
+        .photo-item .text-overlay {
+            /* 文字設定 24pt */
+            font-size: 24pt; 
+            /* 文字顏色 */
+            color: #fff; 
+            /* 讓文字在圖片上方 */
+            z-index: 2; 
+            /* 讓文字有陰影，更容易在圖片上閱讀 */
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+            /* 底部邊距 */
+            padding-bottom: 10px; 
+            position: relative;
+        }
+
+        /* 7. 滑鼠懸停效果 */
+        .photo-item:hover {
+            /* 圖片稍微放大 */
+            transform: scale(1.05); 
+            /* 增加陰影，更有立體感 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+            /* 讓滑鼠變成手指圖示 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_1" alt="照片說明1">
+            <span class="text-overlay">文字</span>
+        </div>
+
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_2" alt="照片說明2">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_3" alt="照片說明3">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_4" alt="照片說明4">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_5" alt="照片說明5">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_6" alt="照片說明6">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_7" alt="照片說明7">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_8" alt="照片說明8">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_9" alt="照片說明9">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_10" alt="照片說明10">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_11" alt="照片說明11">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_12" alt="照片說明12">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_13" alt="照片說明13">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_14" alt="照片說明14">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_15" alt="照片說明15">
+            <span class="text-overlay">文字</span>
+        </div>
+        
+        <div class="photo-item">
+            <img src="PHOTO_FILE_NAME_16" alt="照片說明16">
+            <span class="text-overlay">文字</span>
+        </div>
+    </div>
+
+</body>
+</html>
