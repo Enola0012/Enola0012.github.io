@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>My anime list</title>
+    <style>
+        /* 繼承上次的 CSS 樣式 */
+        body {
+            background-color: #F0F0F0; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container {
+            width: 1920px; 
+            margin: 0 auto; 
+            display: flex; 
+            padding-top: 50px; 
+        }
+        .left-column {
+            width: 500px;
+            margin-right: 40px; 
+        }
+        .center-column {
+            width: 700px;
+            margin-right: 40px; 
+        }
+        .right-column {
+            width: 500px;
+        }
+        .photo-thumbnail {
+            width: 500px;
+            height: 225px; 
+            margin-bottom: 40px; 
+            border-radius: 10px; 
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .photo-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+        .content-box {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 40px; 
+            border-radius: 8px;
+        }
+        .right-column .content-box-top {
+            height: 700px;
+        }
+        .text-18pt {
+            font-size: 18pt; 
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .text-12pt {
+            font-size: 12pt; 
+            line-height: 1.6;
+            color: #555;
+        }
+        /* Lightbox 樣式 */
+        .lightbox-overlay {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); 
+            backdrop-filter: blur(8px); 
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox-content {
+            width: 60vw; 
+            max-width: 1152px; 
+            aspect-ratio: 16 / 9; 
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+        }
+    </style>
+    
+    <script>
+        function openLightbox(imageSrc) {
+            const overlay = document.getElementById('lightboxOverlay');
+            const largeImage = document.getElementById('largeImage');
+            largeImage.src = imageSrc;
+            overlay.style.display = 'flex';
+        }
+        function closeLightbox() {
+            document.getElementById('lightboxOverlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="grid-container">
+        
+        <div class="left-column">
+            
+            <div class="photo-thumbnail" onclick="openLightbox('**替換：左欄第一張圖片檔名**')">
+                <img src="**替換：左欄第一張圖片檔名**" alt="左欄圖片 1">
+            </div>
+
+            <div class="photo-thumbnail" onclick="openLightbox('**替換：左欄第二張圖片檔名**')">
+                <img src="**替換：左欄第二張圖片檔名**" alt="左欄圖片 2">
+            </div>
+            
+            <div class="photo-thumbnail" onclick="openLightbox('**替換：左欄第三張圖片檔名**')">
+                <img src="**替換：左欄第三張圖片檔名**" alt="左欄圖片 3">
+            </div>
+            
+        </div>
+        
+    <div class="center-column">
+        <div class="content-box" style="height: 1000px;">
+        
+            <div class="text-18pt">排球少年</div>
+        
+            <div class="text-12pt">
+                熱血運動漫畫與動畫，講述身材矮小的日向翔陽，在國中時被烏野高中的「小巨人」吸引而愛上排球，升上高中後與天才舉球員影山飛雄不打不相識，兩人組成「怪人速攻」組合，與烏野高中排球社隊友們一同在球場上揮灑汗水，朝著全國大賽目標邁進的故事，以其真實的球技描寫、充滿青春與團隊合作的感動，風靡全球。
+                <br><br>
+                日向翔陽:村瀨步<br>
+                影山飛雄:石川界人<br>
+                月島螢:內山昂輝<br>
+                孤爪研磨:梶裕貴<br>
+                黑尾鐵朗:中村悠一<br>
+                及川徹:浪川大輔
+            </div>
+        </div>
+    </div>
+        
+        <div class="right-column">
+            
+            <div class="content-box content-box-top">
+                <div class="text-18pt">歌曲介紹</div> 
+                
+                <div class="text-12pt">
+                    這是右上方區塊的 12pt 內文。你可以寫入相機型號、光圈快門設定、或者相關地圖連結等次要資訊。
+                </div>
+            </div>
+            
+            <div class="content-box">
+                <div class="text-12pt">這是右下方區塊的 12pt 內文。版權所有 © 2025。</div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div id="lightboxOverlay" class="lightbox-overlay" onclick="closeLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img id="largeImage" src="" alt="放大後的圖片">
+        </div>
+    </div>
+
+</body>
+</html>
