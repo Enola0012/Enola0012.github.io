@@ -125,6 +125,14 @@
             document.getElementById('lightboxOverlay').style.display = 'none';
         }
     </script>
+    <script>
+        // 連結另開新頁
+        const links = document.querySelectorAll('.text-12pt a');
+        links.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        });
+    </script>
 </head>
 <body>
 
@@ -171,7 +179,7 @@
                     <a href="https://youtu.be/libAD49_XNw?si=E_maOen5fpRerWRh" target="_blank" rel="noopener noreferrer" class="oped-link">OP1：イマジネーション (SPYAIR)</a><br><br>
                     <a href="https://youtu.be/HxTQF1bCyag?si=3KC4H1Y30TlohhvO" target="_blank" rel="noopener noreferrer" class="oped-link">OP2：Ah Yeah!! (スキマスイッチ)</a><br><br>
                     <a href="https://youtu.be/Eaiz6KPt83c?si=-Zv4-vCOaapn_RFl" target="_blank" rel="noopener noreferrer" class="oped-link">ED1：天地ガエシ (NICO Touches the Walls)</a><br><br>
-                    <a href="https://youtu.be/X0Njn4USIfs?si=MQMTqiCYiMBf0_d2" target="_blank" rel="noopener noreferrer" class="oped-link">ED2：LEO (tacica)</a><br><br>
+                    <a href="https://youtu.be/X0Njn4USIfs?si=MQMTqiCYiMBf0_d2" class="oped-link">ED2：LEO (tacica)</a><br><br>
 
                     <strong>第二季</strong><br>
                     OP1：アイム・ア・ビリーバー (SPYAIR)<br>http://www.youtube.com/watch?v=nOxEBB5Mhek<br><br>
