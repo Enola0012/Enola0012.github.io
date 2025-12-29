@@ -58,8 +58,8 @@
         .photo-item img {
             width: 100%; 
             height: 100%;
-            filter: grayscale (100%);
-            transition: filter 0.3s ease;
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
             object-fit: cover; 
             border-radius: 10px; 
             position: absolute;
@@ -68,8 +68,8 @@
             z-index: 1; /* 圖片在連結之下 */
         }
 
-        .photo-item img:hover {
-            filter: grayscale (0%);
+        .photo-item:hover img {
+            filter: grayscale(0%);
         }
         
         /* 6. 文字樣式 (24pt) */
@@ -86,7 +86,7 @@
         .photo-item:hover {
             transform: scale(1.05); 
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            filter: grayscale (0%);
+            filter: grayscale(0%);
             cursor: pointer;
         }
         
