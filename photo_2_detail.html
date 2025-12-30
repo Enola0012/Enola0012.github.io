@@ -125,13 +125,31 @@
         }
     </script>
     <script>
-        // 連結另開新頁
-        const links = document.querySelectorAll('.text-12pt a');
-        links.forEach(link => {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
+    (function() {
+        // 使用 window.onload 確保所有 HTML 包含 JSP 動態產生的部分都載入完成
+        window.addEventListener('load', function() {
+            const links = document.querySelectorAll('.text-12pt a');
+            
+            if (links.length === 0) {
+                console.warn("找不到符合 .text-12pt a 的連結，請檢查 HTML 結構。");
+                return;
+            }
+
+            links.forEach(link => {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+                
+                // 強制覆蓋：防止有其他 JS 阻止了 target="_blank"
+                link.onclick = function(e) {
+                    // 如果還是沒開新頁，可以用這個保險
+                    // window.open(this.href, '_blank');
+                    // return false; 
+                };
+            });
+            console.log("成功處理了 " + links.length + " 個連結。");
         });
-    </script>
+    })();
+</script>
 </head>
 <body>
 
