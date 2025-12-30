@@ -102,6 +102,16 @@
             object-fit: cover;
             display: block;
         }
+        .oped-link {
+            text-decoration: none;    /* 移除底線 */
+            color: #444;
+        }
+        
+        .oped-link:hover {
+            color: #ffc847;           /* 滑鼠移過去變成的顏色*/
+            text-decoration: none;
+        }
+        
     </style>
     
     <script>
@@ -114,6 +124,14 @@
         function closeLightbox() {
             document.getElementById('lightboxOverlay').style.display = 'none';
         }
+    </script>
+    <script>
+        // 連結另開新頁
+        const links = document.querySelectorAll('.text-12pt a');
+        links.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        });
     </script>
 </head>
 <body>
@@ -156,32 +174,32 @@
                 <div class="text-18pt">歌曲介紹</div> 
                 <div class="text-12pt">
                     <strong>第一季</strong><br>
-                    OP：一斉の声 (喜多修平)<br>https://www.youtube.com/watch?v=zXKO7HNf3VQ<br><br>
-                    ED：夏夕空 (中孝介)<br>https://www.youtube.com/watch?v=pY-r_GfM_H8<br><br>
+                    <a href="https://youtu.be/k-lLgBSgx64?si=GLttwb_GFMlK2YXL" class="oped-link">OP：一斉の声 (喜多修平)</a><br><br>
+                    <a href="https://youtu.be/mjmxrKoUq_g?si=zvCEPzRSdIOqESvV" class="oped-link">ED：夏夕空 (中孝介)</a><br><br>
 
                     <strong>第二季</strong><br>
-                    OP：あの日タイムマシン (LONG SHOT PARTY)<br>https://www.youtube.com/watch?v=Cq_7KbeG08w<br><br>
-                    ED：愛してる (高鈴)<br>http://www.youtube.com/watch?v=1A76BpaOJfY<br><br>
+                    <a href="https://youtu.be/bk7fs0yz11E?si=GiVgInA0ix0GNWS_" class="oped-link">OP：あの日タイムマシン (LONG SHOT PARTY)</a><br><br>
+                    <a href="https://youtu.be/inphcrvfX0U?si=Rv89jRVwLeKJBJiO" class="oped-link">ED：愛してる (高鈴)</a><br><br>
 
                     <strong>第三季</strong><br>
-                    OP：僕にできること (HOW MERRY MARRY)<br>https://www.youtube.com/watch?v=R5p5w-gY0xM<br><br>
-                    ED：君ノカケラ feat. 宮本笑里 (中孝介)<br>https://www.youtube.com/watch?v=0hW64_U6S3w<br><br>
+                    <a href="https://youtu.be/OaNojvGxbXM?si=PkqUPRT9mhgVRtV1" class="oped-link">OP：僕にできること (HOW MERRY MARRY)</a><br><br>
+                    <a href="https://youtu.be/ZgQwk90imEg?si=i3koXGAoXd2XPVXl" class="oped-link">ED：君ノカケラ feat. 宮本笑里 (中孝介)</a><br><br>
 
                     <strong>第四季</strong><br>
-                    OP：今、このとき。 (Hi-Fi CAMP)<br>https://www.youtube.com/watch?v=68T0j_n7O3w<br><br>
-                    ED：たからもの (河野萬里奈)<br>https://www.youtube.com/watch?v=QJ0tZzn_ujQ<br><br>
+                    <a href="https://youtu.be/SspfzN9PJSs?si=Ebe_sybYverAAAt9" class="oped-link">OP：今、このとき。 (Hi-Fi CAMP)</a><br><br>
+                    <a href="https://youtu.be/gwd8UNQKi5c?si=EJw2Ay_ult3MP8WP" class="oped-link">ED：たからもの (河野萬里奈)</a><br><br>
                     
                     <strong>第五季</strong><br>
-                    OP：タカラバコ (ササノマリイ)<br>https://www.youtube.com/watch?v=I0Gshh-WvTo<br><br>
-                    ED：茜さす (Aimer)<br>http://www.youtube.com/watch?v=Ip7v9jMwCOM<br><br>
+                    <a href="https://youtu.be/qDUDd-rRpZU?si=UdiKyD2iYv1v-iMv" class="oped-link">OP：タカラバコ (ササノマリイ)</a><br><br>
+                    <a href="https://youtu.be/bN1t3-2X3aM?si=yxlaTYPxX5u_zRgg" class="oped-link">ED：茜さす (Aimer)</a><br><br>
 
                     <strong>第六季</strong><br>
-                    OP：フローリア (佐香智久)<br>https://www.youtube.com/watch?v=0QG8r6U5r9Y<br><br>
-                    ED：きみのうた (安田瑞)<br>http://www.youtube.com/watch?v=LFhKvq4rN5Q<br><br>
+                    <a href="https://youtu.be/Ng9aUVGOvAI?si=0KXS6fcqMdzeXFX9" class="oped-link">OP：フローリア (佐香智久)</a><br><br>
+                    <a href="https://youtu.be/YvlA5XBuXYA?si=DSUa8hEtOlSPtIZ3" class="oped-link">ED：きみのうた (安田瑞)</a><br><br>
 
                     <strong>第七季</strong><br>
-                    OP1：Alca (柏木ひなた)<br>https://www.youtube.com/watch?v=uK48_lH_S_Y<br><br>
-                    ED1：こまりわらい (近藤利樹)<br>http://www.youtube.com/watch?v=ck93g4ZSJpU<br><br>
+                    <a href="https://youtu.be/tgbnp1Ki_u8?si=_t9LxqA6Zn-tWopZ" class="oped-link">OP：Alca (柏木ひなた)</a><br><br>
+                    <a href="https://youtu.be/LTpO-ItRwmc?si=3zmTBPILtzLo48sY" class="oped-link">ED：こまりわらい (近藤利樹)</a><br><br>
                 </div>
             </div>
             
