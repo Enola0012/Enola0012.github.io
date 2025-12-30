@@ -102,6 +102,16 @@
             object-fit: cover;
             display: block;
         }
+        .oped-link {
+            text-decoration: none;    /* 移除底線 */
+            color: #444;
+        }
+        
+        .oped-link:hover {
+            color: #ffc847;           /* 滑鼠移過去變成的顏色*/
+            text-decoration: none;
+        }
+        
     </style>
     
     <script>
@@ -114,6 +124,14 @@
         function closeLightbox() {
             document.getElementById('lightboxOverlay').style.display = 'none';
         }
+    </script>
+    <script>
+        // 連結另開新頁
+        const links = document.querySelectorAll('.text-12pt a');
+        links.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        });
     </script>
 </head>
 <body>
@@ -160,14 +178,18 @@
                 <div class="text-18pt">歌曲介紹</div> 
                 <div class="text-12pt">
                     <strong>第一季</strong><br>
-                    OP1：Mixed Nuts (Official髭男dism)<br>http://www.youtube.com/watch?v=_k0ih73kFk8<br><br>
-                    OP2：SOUVENIR (BUMP OF CHICKEN)<br>http://www.youtube.com/watch?v=yfcV-RxJug8<br><br>
-                    ED1：喜劇 (星野源)<br>http://www.youtube.com/watch?v=URR_Nv-6MZs<br><br>
-                    ED2：色彩 (yama)<br>http://www.youtube.com/watch?v=Tkp7gEC1E_0<br><br>
+                    <a href="https://youtu.be/CbH2F0kXgTY?si=Nl8a4hG7tzU0gQXE" class="oped-link">OP1：Mixed Nuts (Official髭男dism)</a><br><br>
+                    <a href="https://youtu.be/C9vAUfSEh8Q?si=0T8DPajC8JLbtJYx" class="oped-link">OP2：SOUVENIR (BUMP OF CHICKEN)</a><br><br>
+                    <a href="https://youtu.be/D_Oyplmhhv0?si=YegB4fo92c-t3l-c" class="oped-link">ED1：喜劇 (星野源)</a><br><br>
+                    <a href="https://youtu.be/E9Dru15yq9w?si=uNvYvASZOFdbWOp-" class="oped-link">ED2：色彩 (yama)</a><br><br>
 
                     <strong>第二季</strong><br>
-                    OP：クラクラ (Ado)<br>https://www.youtube.com/watch?v=Ad799T64Dps<br><br>
-                    ED：トドメの一撃 (Vaundy feat. Cory Wong)<br>https://www.youtube.com/watch?v=H7m9_N28K7k<br><br>
+                    <a href="https://youtu.be/dfMb37KGqdE?si=V-rRVl3_KJpb2flg" class="oped-link">OP：クラクラ (Ado)</a><br><br>
+                    <a href="https://youtu.be/MxYdEpvMdmk?si=rCn6HSHfCjgu_da-" class="oped-link">ED：トドメの一撃 (Vaundy feat. Cory Wong)</a><br><br>
+
+                    <strong>第三季</strong><br>
+                    <a href="https://youtu.be/Cn6evNNykVI?si=07T7rBJ2gW8cy_Ri" class="oped-link">OP：灯を護る (SPITZ)</a><br><br>
+                    <a href="https://youtu.be/fH8hLLww2JI?si=-OFjPimapgR9LYAm" class="oped-link">ED：Actor (ikura)</a><br><br>
                 </div>
             </div>
             
